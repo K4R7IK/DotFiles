@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if hash cpupower 2>/dev/null;then
+ echo asdf | sudo -S cpupower frequency-set -g schedutil 1>/dev/null
+else
+	hash notify-send 2>/dev/null &&	notify-send -u normal -a "Governer" -i cpuinfo "Not Set" "$(echo -e '\n cpupower not installed')"
+fi

@@ -1,0 +1,85 @@
+# Personal Shell configuration for Linux Shell 
+
+# Paths
+[ -d "$HOME/Personal/bin" ] && export PATH="$PATH:$HOME/Personal/bin"
+[ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
+[ -d "$HOME/.npm-global/bin" ] && export PATH="$PATH:$HOME/.npm-global/bin"
+[ -d "$HOME/.cargo/bin" ] && export PATH="$PATH:$HOME/.cargo/bin"
+[ -d "$HOME/go/bin" ] && export PATH="$PATH:$HOME/go/bin"
+
+#sources
+# source ~/.local/share/icons-in-terminal/icons_bash.sh
+
+
+# NALA Aliases
+alias install="sudo nala install -y"
+alias remove="sudo nala remove"
+alias update="sudo nala update"
+alias upgrade="sudo nala upgrade"
+alias clean="sudo nala clean && sudo nala autoremove && sudo nala autopurge"
+alias listpack="nala list "
+
+# Other Aliases
+alias copy="xclip -selection clipboard"
+alias open="xdg-open 2>/dev/null"
+alias tb="nc termbin.com 9999"
+alias cpufreq='watch -n1 -t "grep \"^[c]pu MHz\" /proc/cpuinfo"'
+alias conf="vi $HOME/Personal/newrc"
+alias clone="git clone $@"
+alias df="duf"
+alias sudo="sudo "
+alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0 __GLX_VENDOR_LIBRARY_NAME=nvidia"
+[ -d "$HOME/Personal/bin" ] && alias cdb="cd ~/Personal/bin/"
+
+
+# Startup Scripts 
+if hash colorscript 2>/dev/null;then
+  colorscript -r
+fi
+
+if hash exa 2>/dev/null;then    
+  alias l='exa -lahF --color=always --sort=size --group-directories-first'
+  alias ls='exa -lhF --color=always --sort=size --group-directories-first'
+  alias lst='exa -lahFT --color=always --sort=size --group-directories-first'
+else
+  echo "Please install 'exa'."
+fi
+
+if hash lvim 2>/dev/null;then
+    alias vi="lvim"
+    alias nvim="lvim"
+    alias vim="lvim"
+fi
+
+if hash batcat 2>/dev/null;then
+  alias cat="batcat $@"
+  alias gov="cat -p /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+else
+  echo "Please install batcat from GitHub"
+  alias gov="cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+fi
+
+
+
+# CPU Governer related
+if hash cpupower 2>/dev/null;then
+set-sched () {
+    sudo cpupower frequency-set -g schedutil 1>/dev/null && echo "Governer: Schedutil" && sudo powerprofilesctl set balanced && echo "Powerprofile: Balanced"
+  }
+set-perf () {
+    sudo cpupower frequency-set -g performance 1>/dev/null && echo "Governer: Performance" && sudo powerprofilesctl set performance && echo "Powerprofile: Performance"
+  }
+else
+  echo "Please install cpupower"
+fi
+
+# Export Stuff
+if hash vim 2>/dev/null;then
+  export EDITOR='vim'
+  if hash nvim 2>/dev/null;then
+    export EDITOR='nvim'
+    if hash lvim 2>/dev/null;then
+      export EDITOR='lvim'
+    fi
+  fi
+fi

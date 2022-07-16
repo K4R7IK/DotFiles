@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Cpu Usage
+DATAPER=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{printf "%0.1f",(100 - $1)}')
+echo -e "CPU $DATAPER%"
+
+# This line create the menu everything after this will include in the menu.
+echo "---"
+
+# Cpu Name
+# echo "$(lscpu | awk '/Model name/' | sed 's/.*://' | sed 's/^[ \t]*//')"
+
+# Cpu Temp using lm-sensors
+echo -e "CpuTemp $(sensors |  awk '/Tctl/ {print $2}' | sed s/+//g)"
+
+# GpuTemp
+echo -e "NvidiaTemp $(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader)°C"
+

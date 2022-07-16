@@ -1,0 +1,24 @@
+#!/bin/bash
+
+DEV=$(ip addr | awk '/state UP/ {print $2}' | sed 's/.$//')
+
+if [ $DEV = wlan0 ];then
+	if [ $(cat /sys/class/net/$DEV/operstate) = up ];then
+		SSID=$(iwgetid -r)
+		OUTPUT=" Connected: $SSID" 
+	else
+		OUTPUT="睊Not Connected"
+	fi
+fi
+
+if [ $DEV = enp2s0 ];then
+	if [ $(cat /sys/class/net/$DEV/operstate) = up ];then
+		SSID=$(iwgetid -r)
+		OUTPUT=" Conneted: $SSID"
+	else
+		OUTPUT=" Not Connected"
+	fi
+fi
+
+echo "$OUTPUT | bash=/bin/bash plasmawindowed org.kde.plasma.networkmanagement"
+

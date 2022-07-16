@@ -1,0 +1,12 @@
+#!/bin/bash
+
+STATUS=$(cat /sys/class/power_supply/BAT0/status)
+CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
+
+if [ $STATUS = Full ];then
+  echo "FULL"
+elif [ $STATUS = Charging ];then
+  echo "Charging $CAPACITY%"
+elif [ $STATUS = Discharging ];then
+  echo "$CAPACITY%"
+fi

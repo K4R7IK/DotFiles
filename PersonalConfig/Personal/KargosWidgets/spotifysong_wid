@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ps --no-headers -C spotify -o args,state &>/dev/null
+if [ $? == 0 ];then
+	SNAME=$(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata | sed -n '/title/{n;p}' | cut -d '"' -f 2)
+	echo "$SNAME| kargos.fa_icon=spotify"
+else
+	echo "No Song Playing."
+fi
+

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ "$1" = "-f" ] ;
+then
+    if [ -f ~/Documents/College/fac.png ] ;
+    then
+       eval feh -x ~/Documents/College/fac.png & 
+    else
+        echo "File doesn't exists"
+    fi
+else
+    if [ -f ~/Documents/College/timetable.png ] ;
+    then
+       eval feh -x ~/Documents/College/timetable.png &
+    else
+        echo "File doesn't exists"
+    fi
+fi

@@ -1,0 +1,61 @@
+#!/bin/bash
+
+function help(){
+	 cat << EOF
+use '-h' for help and to get this menu.
+
+Info: You can manually give Time value in command as argument (in military time format) only hour is accepted to use e.g \`greet -t 10\`
+EOF
+}
+
+function greetme(){
+GREET=""
+TIME=$1
+if ! command -v figlet &>/dev/null;then
+        echo "figlet command is not installed in the System."
+else
+        if [[ $TIME -gt 0 && $TIME -le 3 ]];then
+                GREET="Ghostly Morning!"
+        elif [[ $TIME -gt 3 && $TIME -le 11 ]];then
+                GREET="Good Morning!"
+        elif [[ $TIME -gt 11 && $TIME -lt 12 ]];then
+                GREET="Good Noon!"
+        elif [[ $TIME -ge 12 && $TIME -le 15 ]];then
+                GREET="Good Afternoon!"
+        elif [[ $TIME -gt 15 && $TIME -le 17 ]];then
+                GREET="Evening!"
+        elif [[ $TIME -gt 17 && $TIME -le 20 ]];then
+                GREET="Good Evening!"
+        elif [[ $TIME -gt 20 && $TIME -lt 24 ]];then
+                GREET="Good Night!"
+        elif [[ $TIME -eq 0 ]];then
+                GREET="Mid Night!"
+        else
+                GREET="WTF TIME!"
+        fi
+        if ! command -v lolcat &>/dev/null;then
+            eval figlet -w `tput cols` -c $GREET
+        else
+            eval figlet -w `tput cols` -c $GREET | lolcat
+        fi
+fi
+   
+}
+
+while getopts "ht:" arg; do
+  case $arg in
+    h)
+	    help
+	    exit
+      ;;
+    t)
+	    greetme $OPTARG
+	    exit
+      ;;
+    *)
+	    echo "Invalid Argument!!"
+	    exit
+  esac
+done
+
+greetme $(date +%-H)

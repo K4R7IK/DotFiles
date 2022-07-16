@@ -1,0 +1,43 @@
+#!/bin/bash
+
+GREET=""
+TIME=$(date +%-H)
+
+if ! command -v figlet &>/dev/null; 
+then
+	echo "figlet not installed"
+elif ! command -v lolcat &>/dev/null;
+then 
+  echo "lolcat not installed"
+else
+	if [[ $TIME -ge 0 && $TIME -le 3 ]];
+	then 
+		GREET="Mid Night"
+
+	elif [[ $TIME -gt 3 && $TIME -le 5 ]];
+	then
+		GREET="Early Morning"
+	
+	elif [[ $TIME -gt 5 && $TIME -le 11 ]];
+	then
+		GREET="Morning"
+
+	elif [[ $TIME -eq 12 ]];
+	then 
+		GREET="NooN"
+
+	elif [[ $TIME -ge 13 && $TIME -le 15 ]];
+	then 
+		GREET="After NooN"
+
+	elif [[ $TIME -gt 15 && $TIME -le 19 ]];
+	then
+		GREET="Evening"
+
+	elif [[ $TIME -gt 19 && $TIME -le 23 ]];
+	then
+		GREET="Night"
+	fi
+	
+	eval figlet -c -w `tput cols` $GREET | lolcat
+fi

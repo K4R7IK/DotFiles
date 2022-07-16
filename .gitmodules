@@ -1,0 +1,3 @@
+[submodule "PersonalConfig/Personal/Asus/RyzenAdj"]
+	path = PersonalConfig/Personal/Asus/RyzenAdj
+	url = https://github.com/FlyGoat/RyzenAdj
