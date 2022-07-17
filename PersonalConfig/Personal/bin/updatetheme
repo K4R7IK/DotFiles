@@ -2,9 +2,14 @@
 
 PATH1=$HOME/.local/share/plasma/desktoptheme/Harmony/icons/
 DPATH=$HOME/Downloads/Future-kde
+DPATH2=$HOME/Downloads/Fluent-icon-theme
 URL=https://github.com/yeyushengfan258/Future-kde.git
+URL2=https://github.com/vinceliuice/Fluent-icon-theme.git
 
-# Cloning the File.
+# Updating Plasma Icons like system tray ones.
+echo "[=] UPDATING PLASMA ICONS"
+
+#Cloning the require files.
 if hash git 2>/dev/null;then
 	echo "[+] Downloding in Progress. Please Wait!"
 	git clone $URL 1>/dev/null 2>&1 $DPATH && echo "[+] Cloning Finished." || echo "[-] Error while cloning."
@@ -24,9 +29,26 @@ if hash rsync 2>/dev/null;then
 	rsync -av --exclude="start.sv*" $DPATH/plasma/desktoptheme/Future-dark/icons/ 1>/dev/null 2>&1 $PATH1 && echo "[+] Syncing Completed Succesfully." || echo "[-] Error Found while Syncing."
 else
 	echo "[-] 'rsync' Not Found. Please Install."
-fi 
+fi
 
 # Cleaning up
 echo "[+] Now Removing unused files."
 rm -rf $DPATH 1>/dev/null 2>&1 && echo "[+] Clean Up Done." || echo "[-] Error Encountred while removing the files."
+
+# Now Updating System Icons
+echo "[=]	UPDATING SYSTEM ICONS"
+
+if hash git 2>/dev/null;then
+	echo "[+] Downloding in Progress. Please Wait!"
+	git clone $URL2 1>/dev/null 2>&1 $DPATH2 && echo "[+] Cloning Finished." || echo "[-] Error while cloning."
+else
+	echo "[-] 'git' not Found. Please Install."
+fi
+
+# change the argument according to your need since i need rounded corner i am using -r.
+echo "[+] Updating System Icons"
+bash $DPATH2/install.sh -r 1>/dev/null 2>&1 && echo "[+] Update Successfull." || echo "[-] Error while updating."
+
+echo "[+] Cleaning Up"
+rm -rf $DPATH2 1>/dev/null 2>&1 && echo "[+] Cleaning Successfull" || echo "[-] Error while Cleaning."
 
