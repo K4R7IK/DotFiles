@@ -1,0 +1,32 @@
+#!/bin/bash
+
+PATH1=$HOME/.local/share/plasma/desktoptheme/Harmony/icons/
+DPATH=$HOME/Downloads/Future-kde
+URL=https://github.com/yeyushengfan258/Future-kde.git
+
+# Cloning the File.
+if hash git 2>/dev/null;then
+	echo "[+] Downloding in Progress. Please Wait!"
+	git clone $URL 1>/dev/null 2>&1 $DPATH && echo "[+] Cloning Finished." || echo "[-] Error while cloning."
+else
+	echo "[-] 'git' not Found. Please Install."
+fi
+
+# Removing everyicon expect Start.svg because I like to keep it something other than default one.
+if hash find 2>/dev/null;then
+	find $PATH1 ! -name "start*" -type f -exec rm -f {} + 1>/dev/null 2>&1 && echo "[+] Removal Successfull." || echo "[-] Error occured while removing files."
+else
+	echo "[-] 'find' Not Found. Please Install."
+fi
+
+# Copying everyicon to it's right place.
+if hash rsync 2>/dev/null;then
+	rsync -av --exclude="start.sv*" $DPATH/plasma/desktoptheme/Future-dark/icons/ 1>/dev/null 2>&1 $PATH1 && echo "[+] Syncing Completed Succesfully." || echo "[-] Error Found while Syncing."
+else
+	echo "[-] 'rsync' Not Found. Please Install."
+fi 
+
+# Cleaning up
+echo "[+] Now Removing unused files."
+rm -rf $DPATH 1>/dev/null 2>&1 && echo "[+] Clean Up Done." || echo "[-] Error Encountred while removing the files."
+
