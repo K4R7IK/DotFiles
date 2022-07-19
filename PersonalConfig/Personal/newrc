@@ -29,7 +29,8 @@ alias clone="git clone $@"
 alias df="duf"
 alias sudo="sudo "
 alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0 __GLX_VENDOR_LIBRARY_NAME=nvidia"
-[ -d "$HOME/Personal/bin" ] && alias cdb="cd ~/Personal/bin/"
+
+[ -d "$HOME/Personal" ] && alias cdp="cd ~/Personal"
 
 
 # Startup Scripts 
