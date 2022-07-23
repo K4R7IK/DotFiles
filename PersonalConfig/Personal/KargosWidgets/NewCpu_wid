@@ -2,7 +2,7 @@
 
 # Cpu Usage
 DATAPER=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{printf "%0.1f",(100 - $1)}')
-echo -e "CPU $DATAPER%"
+echo -e " $DATAPER% | kargos.fa_icon=tachometer"
 
 # This line create the menu everything after this will include in the menu.
 echo "---"
@@ -11,8 +11,11 @@ echo "---"
 # echo "$(lscpu | awk '/Model name/' | sed 's/.*://' | sed 's/^[ \t]*//')"
 
 # Cpu Temp using lm-sensors
-echo -e "CpuTemp $(sensors |  awk '/Tctl/ {print $2}' | sed s/+//g)"
+# For some reason kargos.fa_icon doesn't work in the submenu so i have use nerdfonts icon.
+
+CPUTEMP=$(sensors |  awk '/Tctl/ {print $2}' | sed s/+//g)
+echo " CPU $CPUTEMP";
 
 # GpuTemp
-echo -e "NvidiaTemp $(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader)°C"
+echo -e " dGPU $(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader)°C | kargos.fa_icon=thermometerHalf"
 

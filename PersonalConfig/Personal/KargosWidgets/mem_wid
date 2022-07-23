@@ -2,5 +2,5 @@
 
 # VAR=$(free --mega | grep Mem | awk {'printf "%.1f",($3/1000)'})
 VAR=$(free -h | awk 'FNR == 2 {print $3}' | sed 's/Gi/ Gib/' ) 
-echo "MEM $VAR"
+echo " $VAR | kargos.fa_icon=tasks"
 
