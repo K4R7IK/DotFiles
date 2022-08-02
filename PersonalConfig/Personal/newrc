@@ -39,7 +39,7 @@ if hash colorscript 2>/dev/null;then
 fi
 
 if hash exa 2>/dev/null;then    
-  alias l='exa -lahF --color=always --sort=size --group-directories-first'
+  alias la='exa -lahF --color=always --sort=size --group-directories-first'
   alias ls='exa -lhF --color=always --sort=size --group-directories-first'
   alias lst='exa -lahFT --color=always --sort=size --group-directories-first'
 else

@@ -1,4 +1,4 @@
-#!/bin/bash
+# !/bin/bash
 
 ps --no-headers -C spotify -o args,state &>/dev/null
 if [ $? == 0 ];then
@@ -7,4 +7,5 @@ if [ $? == 0 ];then
 else
 	echo "No Song Playing | kargos.fa_icon=music"
 fi
+
 
