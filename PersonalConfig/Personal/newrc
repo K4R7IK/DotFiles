@@ -1,5 +1,10 @@
 # Personal Shell configuration for Linux Shell 
 
+# Startup Scripts 
+if hash colorscript 2>/dev/null;then
+  colorscript -r
+fi
+
 # Paths
 [ -d "$HOME/Personal/bin" ] && export PATH="$PATH:$HOME/Personal/bin"
 [ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
@@ -31,12 +36,8 @@ alias sudo="sudo "
 alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 
 [ -d "$HOME/Personal" ] && alias cdp="cd ~/Personal"
+[ -d "$HOME/DotFiles" ] && alias cdd="cd ~/DotFiles"
 
-
-# Startup Scripts 
-if hash colorscript 2>/dev/null;then
-  colorscript -r
-fi
 
 if hash exa 2>/dev/null;then    
   alias la='exa -lahF --color=always --sort=size --group-directories-first'
