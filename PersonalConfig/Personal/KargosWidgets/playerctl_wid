@@ -2,7 +2,11 @@
 
 if [[ $(playerctl -l | grep spotify) ]];then
   NAME=$(playerctl metadata --format {{title}} --player=spotify)
-  echo "${NAME:0:23} | kargos.fa_icon=spotify onclick=bash bash='playerctl play-pause'"
+  LEN=${#NAME}
+  if [[ $LEN -ge 24 ]];then
+    NAME="${NAME:0:23}..."
+  fi
+  echo "$NAME| kargos.fa_icon=spotify onclick=bash bash='playerctl play-pause'"
 else
   echo "Peace Attained | kargos.fa_icon=handPeaceO"
 fi
