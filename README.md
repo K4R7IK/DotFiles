@@ -1,3 +1,22 @@
 # DotFiles
-This is my Linux Configuration till date. 
-Feel free to suggest code improvement and any good changes.
+<div align="justify">
+
+<div align="center">
+
+```ocaml
+NEVER SKIP / IGNORE / AVOID README
+```
+
+```css
+      __/)   ‌‌‌‌‬‬‬‍ ‌‌‌‌‌‬‌‌   ‌‌‌‌‌﻿‌‬ ‌‌‌‌‌﻿‌‌‌‌‌‌‌﻿‌‬        ‌‌‌‌‌﻿‌‬_      ‌‌‌‌‌‬‌‌_       ‌‌‌‌‍‬﻿﻿  ‌‌‌‌‍﻿‍﻿ 
+   .‌‌‌‌‍‬﻿‌-(_‌‌‌‌‌﻿‍‌_(=:   |   ‌‌‌‌‍‬‌﻿   ‌‌‌‌‍‬‍‍   ‌‌‌‌‌‬‌‌ | | o  | |     ‌‌‌‌‌﻿﻿‌    
+‌‌‌‌‍‬‌‍|\ |    \) ‌‌‌‌‍‬﻿‌ _‌‌‌‌‍﻿‍‌_| ‌‌‌‌‍‬‍‍  __ ‌‌‌‌‍﻿‌‬_|‌‌‌‌‍‬﻿‬_ | |‌‌‌‌‍‬‌‍    |‌‌‌‌‍﻿‍‌ |  _ ‌‌‌‌‍‬‍‍  , ‌‌‌‌‌‬﻿‍ 
+‌‌‌‌‍﻿‌﻿\‌‌‌‌‍‬‍‍ ||       / ‌‌‌‌‌﻿‍﻿ ‌‌‌‌‍‬‍‍|  /  \_|  |/‌‌‌‌‍‬﻿‬  |  |/  |/  / \‌‌‌‌‍‌‌‌‌‌‌‌‍﻿‌‌_
+ \||     ‌‌‌‌‍‬﻿‍  \_/|_/\__/ |_‌‌‌‌‌‬﻿‬/‌‌‌‌‍‬﻿‍|__/|_‌‌‌‌‍‬‍‍/|__/‌‌‌‌‌﻿﻿‬|__/ \/ 
+  \|                     |\                 
+   |  6F 77 6C 34 63 65  |/  with aesthetics
+```
+
+</div>
+
+### :octocat: ‎ <sup><sub><samp>HI THERE! THANKS FOR DROPPING BY!</samp></sub></sup>
