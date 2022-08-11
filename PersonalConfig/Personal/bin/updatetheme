@@ -7,48 +7,48 @@ URL=https://github.com/yeyushengfan258/Future-kde.git
 URL2=https://github.com/vinceliuice/Fluent-icon-theme.git
 
 # Updating Plasma Icons like system tray ones.
-echo "[=] UPDATING PLASMA ICONS"
+echo -e "\e[1;33m [=] UPDATING PLASMA ICONS"
 
 #Cloning the require files.
 if hash git 2>/dev/null;then
-	echo "[+] Downloding in Progress. Please Wait!"
-	git clone $URL 1>/dev/null 2>&1 $DPATH && echo "[+] Cloning Finished." || echo "[-] Error while cloning."
+	echo -e "\e[1;32m [+] Downloding in Progress. Please Wait!"
+	git clone $URL 1>/dev/null 2>&1 $DPATH && echo -e "\e[1;32m [+] Cloning Finished." || echo -e "\e[1;31m [-] Error while cloning."
 else
-	echo "[-] 'git' not Found. Please Install."
+	echo -e "\e[1;31m [-] 'git' not Found. Please Install."
 fi
 
 # Removing everyicon expect Start.svg because I like to keep it something other than default one.
 if hash find 2>/dev/null;then
-	find $PATH1 ! -name "start*" -type f -exec rm -f {} + 1>/dev/null 2>&1 && echo "[+] Removal Successfull." || echo "[-] Error occured while removing files."
+	find $PATH1 ! -name "start*" -type f -exec rm -f {} + 1>/dev/null 2>&1 && echo -e "\e[1;32m [+] Removal Successfull." || echo -e "\e[1;31m [-] Error occured while removing files."
 else
-	echo "[-] 'find' Not Found. Please Install."
+	echo -e "\e[1;31m [-] 'find' Not Found. Please Install."
 fi
 
 # Copying everyicon to it's right place.
 if hash rsync 2>/dev/null;then
-	rsync -av --exclude="start.sv*" $DPATH/plasma/desktoptheme/Future-dark/icons/ 1>/dev/null 2>&1 $PATH1 && echo "[+] Syncing Completed Succesfully." || echo "[-] Error Found while Syncing."
+	rsync -av --exclude="start.sv*" $DPATH/plasma/desktoptheme/Future-dark/icons/ 1>/dev/null 2>&1 $PATH1 && echo -e "\e[1;32m [+] Syncing Completed Succesfully." || echo -e "\e[1;31m [-] Error Found while Syncing."
 else
-	echo "[-] 'rsync' Not Found. Please Install."
+	echo -e "\e[1;31m [-] 'rsync' Not Found. Please Install."
 fi
 
 # Cleaning up
-echo "[+] Now Removing unused files."
-rm -rf $DPATH 1>/dev/null 2>&1 && echo "[+] Clean Up Done." || echo "[-] Error Encountred while removing the files."
+echo -e "\e[1;32m [+] Now Removing unused files."
+rm -rf $DPATH 1>/dev/null 2>&1 && echo -e "\e[1;32m [+] Clean Up Done." || echo -e "\e[1;31m [-] Error Encountred while removing the files."
 
 # Now Updating System Icons
-echo "[=]	UPDATING SYSTEM ICONS"
+echo -e "\e[1;33m [=]	UPDATING SYSTEM ICONS"
 
 if hash git 2>/dev/null;then
-	echo "[+] Downloding in Progress. Please Wait!"
-	git clone $URL2 1>/dev/null 2>&1 $DPATH2 && echo "[+] Cloning Finished." || echo "[-] Error while cloning."
+	echo -e "\e[1;32m [+] Downloding in Progress. Please Wait!"
+	git clone $URL2 1>/dev/null 2>&1 $DPATH2 && echo -e "\e[1;32m [+] Cloning Finished." || echo -e "\e[1;31m [-] Error while cloning."
 else
-	echo "[-] 'git' not Found. Please Install."
+	echo -e "\e[1;31m [-] 'git' not Found. Please Install."
 fi
 
 # change the argument according to your need since i need rounded corner i am using -r.
-echo "[+] Updating System Icons"
-bash $DPATH2/install.sh -r 1>/dev/null 2>&1 && echo "[+] Update Successfull." || echo "[-] Error while updating."
+echo -e "\e[1;32m [+] Updating System Icons"
+bash $DPATH2/install.sh -r 1>/dev/null 2>&1 && echo -e "\e[1;32m [+] Update Successfull." || echo -e "\e[1;31m [-] Error while updating."
 
-echo "[+] Cleaning Up"
-rm -rf $DPATH2 1>/dev/null 2>&1 && echo "[+] Cleaning Successfull" || echo "[-] Error while Cleaning."
+echo -e "\e[1;32m [+] Cleaning Up"
+rm -rf $DPATH2 1>/dev/null 2>&1 && echo -e "\e[1;32m [+] Cleaning Successfull" || echo -e "\e[1;31m [-] Error while Cleaning."
 
