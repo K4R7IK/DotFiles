@@ -16,13 +16,21 @@ fi
 # source ~/.local/share/icons-in-terminal/icons_bash.sh
 
 
-# NALA Aliases
-alias install="sudo nala install -y"
-alias remove="sudo nala remove"
-alias update="sudo nala update"
-alias upgrade="sudo nala upgrade"
-alias clean="sudo nala clean && sudo nala autoremove && sudo nala autopurge"
-alias listpack="nala list "
+if [[ $(lsb_release -i | awk '{print $3}') == "Ubuntu" ]];then
+  if hash nala 2>/dev/null;then
+    alias install="sudo nala install -y"
+    alias remove="sudo nala remove"
+    alias update="sudo nala update"
+    alias upgrade="sudo nala upgrade"
+    alias clean="sudo nala clean && sudo nala autoremove && sudo nala autopurge"
+  else
+    alias install="sudo apt install -y"
+    alias remove="sudo apt --purge remove"
+    alias update="sudo apt update"
+    alias upgrade="sudo apt upgrade"
+    alias clean="sudo apt autoremove"
+  fi
+fi
 
 # Other Aliases
 alias copy="xclip -selection clipboard"
