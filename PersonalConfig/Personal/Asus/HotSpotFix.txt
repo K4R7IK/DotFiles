@@ -1,0 +1,33 @@
+First, packet forwarding needs to be enabled in ufw. Two configuration files will need to be adjusted. In /etc/default/ufw change the DEFAULT_FORWARD_POLICY to "ACCEPT"”:
+
+DEFAULT_FORWARD_POLICY="ACCEPT"
+Then edit /etc/ufw/sysctl.conf and uncomment the following (I guess your script for starting virtual hotspot already does set IP Forwarding, so you can skip this step or may want to remove IP forwarding line from your script):
+
+net/ipv4/ip_forward=1
+Similarly, for IPv6 forwarding uncomment:
+
+net/ipv6/conf/default/forwarding=1
+Now we will add rules to the /etc/ufw/before.rules file. The default rules only configure the filter table, and to enable masquerading the nat table will need to be configured. Add the following to the top of the file just after the header comments (again, if you have a script that you use to start your hotspot, you can, or probably should, remove any lines relating to masqueradaing from there):
+
+# nat Table rules
+*nat
+:POSTROUTING ACCEPT [0:0]
+
+# Forward traffic through eth8.
+-A POSTROUTING -s 192.168.0.0/24 -o eth8 -j MASQUERADE
+
+# don't delete the 'COMMIT' line or these nat table rules won't be processed
+COMMIT
+The comments are not strictly necessary, but it is considered good practice to document your configuration. Also, when modifying any of the rules files in /etc/ufw, make sure these lines are the last line for each table modified:
+
+# don't delete the 'COMMIT' line or these rules won't be processed
+COMMIT
+For each Table a corresponding COMMIT statement is required. In these examples only the nat and filter tables are shown, but you can also add rules for the raw and mangle tables.
+
+[Note]  
+In the above example replace eth8 and 192.168.0.0/24 with the appropriate interfaces and IP range for your network.
+
+Finally, disable and re-enable ufw to apply the changes:
+
+sudo ufw disable && sudo ufw enable
+IP Masquerading should now be enabled. You can also add any additional FORWARD rules to the /etc/ufw/before.rules. It is recommended that these additional rules be added to the ufw-before-forward chain.
