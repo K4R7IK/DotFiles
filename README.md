@@ -28,15 +28,15 @@ NEVER SKIP / IGNORE / AVOID README
 ---
 
 ### About:
-1. Personal Config consist of the following:
+## 1. Personal Config consist of the following:
    - **newrc** -> This is my own config file which consist of alias and some enviroment variables.
    - **bin** -> Contains all my personal/online scripts which I may use on daily basis.
    - **KargosWidgets** -> This folder contain all the scripts for the KargosWidgets which I have used throughout my system, like CPU,MEM etc.
 
-2. Kargos:
+## 2. Kargos:
    If you want to use kargos make sure you have Kargos installed from github. I am using [Kargos-v0.6.0](https://github.com/lipido/kargos/tree/v0.6.0) as there were some problems with recent ones.
    You can place widget any way you want.
 
-3. StarShip Prompt:
+## 3. StarShip Prompt:
    There is a shell prompt in **ShellCustom**. If you like it you may use it.
 
