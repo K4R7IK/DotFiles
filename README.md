@@ -19,3 +19,8 @@ NEVER SKIP / IGNORE / AVOID README
 </div>
 
 ### :octocat: ‎ <sup><sub><samp>HI THERE! THANKS FOR DROPPING BY!</samp></sub></sup>
+
+
+![Desktop](./Assets/Desktop.png)
+![Launcher](./Assets/Launcher.png)
+![Apps](./Assets/Apps.png)
