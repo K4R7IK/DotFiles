@@ -1,0 +1,68 @@
+[Bismuth]
+Description=Bismuth
+clientmachine=localhost
+minsize=25,25
+minsizerule=2
+title=Bak — Dolphin
+types=1
+windowrole=dolphin#1
+
+[Desktop 1]
+Description=Desktop 1
+desktops=fb79a571-b4af-45a2-a374-e21f8d74aa43
+desktopsrule=3
+types=1
+wmclass=(firefox|google-chrome|chromium|qutebrowser)
+wmclasscomplete=true
+wmclassmatch=3
+
+[Desktop 2]
+Description=Desktop 2
+desktops=ba1c5671-362e-48a5-af9d-862ff45eee10
+desktopsrule=3
+types=1
+wmclass=(code|systemsettings|kvantummanager|kdeconnect-app|kcmshell5)
+wmclasscomplete=true
+wmclassmatch=3
+
+[Desktop 3]
+Description=Desktop 3
+desktops=8541c64c-7138-489f-9d21-4a2543958d16
+desktopsrule=3
+types=1
+wmclass=(dolphin|okular|desktopeditors|gwenview)
+wmclasscomplete=true
+wmclassmatch=3
+
+[Desktop 4]
+Description=Desktop 4
+desktops=c75875d3-1f0b-4c28-a7c2-80237b97648c
+desktopsrule=3
+types=1
+wmclass=(lutris|steam|*.exe)
+wmclasscomplete=true
+wmclassmatch=3
+
+[Desktop 5]
+Description=Desktop 5
+desktops=561d7dcd-1c1f-4132-afda-edf577cbee26
+desktopsrule=3
+wmclassmatch=1
+
+[Desktop 6]
+Description=Desktop 6
+desktops=a155dbc1-b2d0-439f-bbd5-2bccad55b1fc
+desktopsrule=3
+types=1
+wmclass=(telegram|discord|skype|element|whatsdesk)
+wmclasscomplete=true
+wmclassmatch=3
+
+[Yakuake]
+Description=Yakuake
+size=1920,486
+sizerule=3
+types=257
+wmclass=yakuake yakuake
+wmclasscomplete=true
+wmclassmatch=1
