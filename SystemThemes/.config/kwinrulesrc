@@ -1,0 +1,214 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[00c1244e-8d5d-42ff-a24d-bc3514c99439]
+Description=Discord
+desktops=993ea2aa-6462-40a9-86f9-3321b1bd6a6f
+desktopsrule=2
+wmclass=discord discord
+wmclasscomplete=true
+wmclassmatch=1
+
+[1]
+Description=Bismuth
+clientmachine=localhost
+minsize=25,25
+minsizerule=2
+title=Bak — Dolphin
+types=1
+windowrole=dolphin#1
+
+[18f60754-e94e-4c9e-b359-0ddc46fd96d2]
+Description=Desktop 2 ()
+desktops=ba1c5671-362e-48a5-af9d-862ff45eee10
+desktopsrule=3
+types=1
+wmclass=(lutris|steam|.exe)
+wmclasscomplete=true
+wmclassmatch=3
+
+[1e646f59-d9f9-4a89-8d93-372a23c1bb9b]
+Description=Settings for navigator firefox
+desktops=ba1c5671-362e-48a5-af9d-862ff45eee10
+desktopsrule=2
+wmclass=navigator firefox
+wmclasscomplete=true
+wmclassmatch=1
+
+[2]
+Description=Desktop 1
+desktops=fb79a571-b4af-45a2-a374-e21f8d74aa43
+desktopsrule=3
+types=1
+wmclass=(firefox|google-chrome|chromium|qutebrowser)
+wmclasscomplete=true
+wmclassmatch=3
+
+[3]
+Description=Desktop 2
+desktops=ba1c5671-362e-48a5-af9d-862ff45eee10
+desktopsrule=3
+types=1
+wmclass=(code|systemsettings|kvantummanager|kdeconnect-app|kcmshell5)
+wmclasscomplete=true
+wmclassmatch=3
+
+[363cb1cd-454d-46d9-8f9d-0bc96bf5d475]
+Description=Desktop 5
+desktops=99417da8-e291-4b08-a179-2f24b8b40d67
+desktopsrule=3
+wmclassmatch=1
+
+[39e771d8-331f-4e5e-892f-c458ca4029dc]
+Description=Window settings for Kali-Linux-2021.4-virtualbox-amd64 [Running] - Oracle VM VirtualBox
+desktops=c75875d3-1f0b-4c28-a7c2-80237b97648c
+desktopsrule=2
+title=Kali-Linux-2021.4-virtualbox-amd64 [Running] - Oracle VM VirtualBox
+wmclass=virtualbox machine virtualbox machine
+wmclasscomplete=true
+wmclassmatch=1
+
+[4]
+Description=Desktop 3
+desktops=8541c64c-7138-489f-9d21-4a2543958d16
+desktopsrule=3
+types=1
+wmclass=(dolphin|okular|desktopeditors|gwenview)
+wmclasscomplete=true
+wmclassmatch=3
+
+[44496ad3-db16-4bb0-a30f-eeb548111a8a]
+Description=Desktop 6 ()
+desktops=993ea2aa-6462-40a9-86f9-3321b1bd6a6f
+desktopsrule=3
+types=1
+wmclass=(telegram|discord|skype)
+wmclasscomplete=true
+wmclassmatch=3
+
+[5]
+Description=Desktop 4
+desktops=c75875d3-1f0b-4c28-a7c2-80237b97648c
+desktopsrule=3
+types=1
+wmclass=(lutris|steam|*.exe)
+wmclasscomplete=true
+wmclassmatch=3
+
+[53ead834-06ec-4036-a422-9d69f600d4f5]
+Description=Desktop 4 ()
+desktops=c75875d3-1f0b-4c28-a7c2-80237b97648c
+desktopsrule=3
+position=0,762
+types=1
+wmclass=(spotify)
+wmclasscomplete=true
+wmclassmatch=3
+
+[56a5cdf1-1c5a-41f2-817a-41a9f9cbb11a]
+Description=Settings for navigator firefox
+noborder=true
+noborderrule=2
+wmclass=navigator firefox
+wmclasscomplete=true
+wmclassmatch=1
+
+[5e569d43-a74c-4f13-bdb4-ab8f7bc252bb]
+Description=Chrome Titlebar
+noborder=true
+noborderrule=2
+wmclass=google-chrome google-chrome
+wmclasscomplete=true
+wmclassmatch=1
+
+[6]
+Description=Desktop 5
+desktops=561d7dcd-1c1f-4132-afda-edf577cbee26
+desktopsrule=3
+wmclassmatch=1
+
+[683f69b1-f68e-4ba2-9144-152451145ccc]
+Description=Yakuake
+size=1920,486
+sizerule=3
+types=257
+wmclass=yakuake yakuake
+wmclasscomplete=true
+wmclassmatch=1
+
+[7]
+Description=Desktop 6
+desktops=a155dbc1-b2d0-439f-bbd5-2bccad55b1fc
+desktopsrule=3
+types=1
+wmclass=(telegram|discord|skype|element|whatsdesk)
+wmclasscomplete=true
+wmclassmatch=3
+
+[79cf407d-9724-4345-a2a2-859ef7820394]
+Description=Desktop 1 ()
+desktops=fb79a571-b4af-45a2-a374-e21f8d74aa43
+desktopsrule=3
+types=1
+wmclass=(firefox|google-chrome|chromium|qutebrowser)
+wmclasscomplete=true
+wmclassmatch=3
+
+[8]
+Description=Yakuake
+size=1920,486
+sizerule=3
+types=257
+wmclass=yakuake yakuake
+wmclasscomplete=true
+wmclassmatch=1
+
+[8817ae9b-be1f-4aeb-95ad-f4917a3650a2]
+Description=Desktop 3 ()
+desktops=8541c64c-7138-489f-9d21-4a2543958d16
+desktopsrule=3
+types=1
+wmclass=(dolphin|okular|desktopeditors|gwenview|discover)
+wmclasscomplete=true
+wmclassmatch=3
+
+[8f5c1a5c-cdbd-47e2-b6ca-bc8d1c6ba03d]
+Description=Bismuth
+minsize=10,10
+minsizerule=2
+types=1
+
+[General]
+count=8
+rules=1,2,3,4,5,6,7,8
+
+[b97b51d4-046c-4190-bfed-ebb8eb9ec4b8]
+Description=New window settings
+wmclassmatch=1
+
+[bbda9ac3-a48f-480d-a169-3fd28ba03fd6]
+Description=Google-Chrome
+desktops=fb79a571-b4af-45a2-a374-e21f8d74aa43
+desktopsrule=2
+types=1
+wmclass=google-chrome google-chrome
+wmclasscomplete=true
+wmclassmatch=1
+
+[f6b2d174-0199-46ee-9024-c54aa4941378]
+Description=Telegram
+desktops=993ea2aa-6462-40a9-86f9-3321b1bd6a6f
+desktopsrule=2
+types=1
+wmclass=telegram telegramdesktop
+wmclasscomplete=true
+wmclassmatch=1
+
+[f86317aa-276e-4a73-bd49-1e2510f7d2e7]
+Description=Desktop 5 ()
+desktops=99417da8-e291-4b08-a179-2f24b8b40d67
+desktopsrule=3
+types=1
+wmclass=(code|systemsettings|kvantummanager|kdeconnect-app|kcmshell5)
+wmclasscomplete=true
+wmclassmatch=3

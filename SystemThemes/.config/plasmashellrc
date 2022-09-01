@@ -1,0 +1,44 @@
+[KFileDialog Settings]
+Recent Files[$e]=anime-rocket.jpg,file:$HOME/Pictures/Wallpaper/samurai.jpg,file:$HOME/Pictures/Wallpaper/shooting star.png,file:$HOME/Pictures/Wallpaper/wallpapersden.com_couple-cityscape-4k_3840x2160.jpg,file:$HOME/Pictures/Wallpaper/oxrri37uu7591.png,file:$HOME/Pictures/Wallpaper/girlsq.jpg,file:$HOME/Pictures/Wallpaper/fzsAoaiyICxAefNxG7wSXESD_iHC51vqk6DyQQCRlWY.jpg,file:$HOME/Pictures/Wallpaper/anthony-intraversato-vYRAP3yMa3I-unsplash.jpg,file:$HOME/Pictures/Wallpaper/astronaut.jpeg,file:$HOME/Pictures/Wallpaper/4la2zznv3k391.jpg,file:$HOME/Pictures/Wallpaper/2mn8bo9krcx71.png,file:$HOME/Pictures/Git-Wallpaper/First/00108.png,file:$HOME/Pictures/Wallpaper/Matrix.jpg,file:$HOME/Pictures/Git-Wallpaper/First/00345.jpg,file:$HOME/Pictures/Git-Wallpaper/Second/Digital/Pixel Art/donut_store.png,file:$HOME/.local/share/plasma/desktoptheme/Harmony/icons/start.svgz,file:$HOME/Pictures/Wallpaper/tttm8u1o3r981.png
+Recent URLs[$e]=file:$HOME/Pictures/,file:$HOME/Downloads/,file:$HOME/Documents/,file:$HOME/,file:$HOME/Pictures/Git-Wallpaper/,file:$HOME/Pictures/Git-Wallpaper/Second/Digital/Pixel Art/,file:$HOME/Pictures/Git-Wallpaper/First/,file:$HOME/Pictures/Wallpaper/,file:$HOME/Pictures/Git-Wallpaper/Second/
+detailViewIconSize=16
+iconViewIconSize=128
+
+[KPropertiesDialog]
+eDP Height 1920x1080=488
+eDP Width 1920x1080=709
+
+[Notification Messages]
+klipperClearHistoryAskAgain=false
+
+[PlasmaViews][Panel 2]
+alignment=132
+panelVisibility=0
+
+[PlasmaViews][Panel 2][Defaults]
+maxLength=1920
+minLength=1920
+thickness=34
+
+[PlasmaViews][Panel 2][Horizontal1920]
+maxLength=1920
+minLength=1920
+thickness=34
+
+[PlasmaViews][Panel 52]
+alignment=132
+panelVisibility=0
+
+[PlasmaViews][Panel 52][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 52][Horizontal1920]
+thickness=34
+
+[ScreenConnectors]
+0=eDP
+1=HDMI-1-0
+2=HDMI-0
+
+[Updates]
+performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/containmentactions_middlebutton.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/maintain_existing_desktop_icon_sizes.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/systemloadviewer_systemmonitor.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/no_middle_click_paste_on_panels.js
