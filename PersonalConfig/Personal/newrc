@@ -1,3 +1,7 @@
+# Pywal Color Settings
+# (wal -t -q -i $(gsettings get org.gnome.desktop.background picture-uri  | grep -oP "://\K.*" | rev | cut -c2- |rev)&)
+# alias colorfix='wal -t -q -i $(gsettings get org.gnome.desktop.background picture-uri | grep -oP "://\K.*" | rev | cut -c2- |rev)'
+
 # Personal Shell configuration for Linux Shell 
 
 # Startup Scripts 
@@ -30,6 +34,15 @@ if [[ $(lsb_release -i | awk '{print $3}') == "Ubuntu" ]];then
     alias upgrade="sudo apt upgrade"
     alias clean="sudo apt autoremove"
   fi
+elif [[ $(lsb_release -i | awk '{print $3}') == "Fedora" ]];then
+  if hash dnf 2>/dev/null;then
+    alias in="sudo dnf install"
+    alias remove="sudo dnf remove"
+    alias update="sudo dnf check-update"
+    alias upgrade="sudo dnf update --refresh"
+    alias packageinfo="dnf info"
+    alias clean="sudo dnf autoremove"
+  fi
 fi
 
 # Other Aliases
@@ -61,13 +74,23 @@ if hash lvim 2>/dev/null;then
     alias vim="lvim"
 fi
 
-if hash batcat 2>/dev/null;then
-  alias cat="batcat $@"
-  alias gov="cat -p /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
-else
-  echo "Please install batcat from GitHub"
-  alias gov="cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+
+if [[ $(lsb_release -i | awk '{print $3}') == "Ubuntu" ]];then
+  if hash batcat 2>/dev/null;then
+    alias cat="batcat $@"
+    alias gov="cat -p /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+  else
+    echo "Please install batcat from GitHub"
+    alias gov="cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+  fi
+elif [[ $(lsb_release -i | awk '{print $3}') == "Fedora" ]];then
+  if hash bat 2>/dev/null;then
+    alias cat="bat"
+  else
+    echo "Please install bat"
+  fi
 fi
+   
 
 
 
@@ -84,12 +107,18 @@ else
 fi
 
 # Export Stuff
-if hash vim 2>/dev/null;then
-  export EDITOR='vim'
-  if hash nvim 2>/dev/null;then
-    export EDITOR='nvim'
-    if hash lvim 2>/dev/null;then
-      export EDITOR='lvim'
-    fi
-  fi
-fi
+# if hash vim 2>/dev/null;then
+#   export EDITOR='vim'
+#   if hash nvim 2>/dev/null;then
+#     export EDITOR='nvim'
+#     if hash lvim 2>/dev/null;then
+#       export EDITOR='lvim'
+#     fi
+#   fi
+# fi
+
+# Pywal Custom
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+#(/bin/cat ~/.cache/wal/sequences &)
