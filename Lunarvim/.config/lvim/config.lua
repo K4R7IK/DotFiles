@@ -41,11 +41,10 @@ local servers = {
   -- "gopls",
   "tsserver",
   "jdtls",
+  "pyright",
 }
 for _, v in ipairs(servers) do
   require("lvim.lsp.manager").setup(v, server_opts)
 end
 
-lvim.autocommands.custom_groups = {
-  { "BufWritePost", "*", ":NvimTreeRefresh" },
-}
+-- lvim.autocmds={"BufWritePost","*",":NvimTreeRefresh"}

@@ -1,23 +1,23 @@
 #Left Prompt
-format = '\[$username<>$hostname\]>\[$directory\]>$fill$all$cmd_duration$shell$line_break$character'
+format = '\[$username>$hostname\]>\[$directory\]>$fill$all$cmd_duration$line_break$character'
 
 [username]
 show_always = true
 format = '[$user]($style)'
-style_root = 'bold red'
-style_user = 'fg:bright-cyan'
+# style_root = 'bold red'
+# style_user = 'fg:bright-cyan'
 
 [hostname]
-ssh_only = false 
+ssh_only = false
 format = '[$hostname]($style)'
-style = 'fg:75'
+# style = 'fg:75'
 
 [directory]
 truncation_length = 5
 truncate_to_repo = true
 read_only = ''
 format = '[$path]($style)[$read_only]($read_only_style)'
-style = 'fg:198'
+# style = 'fg:198'
 
 [fill]
 symbol = ' '
@@ -35,14 +35,14 @@ vicmd_symbol = '[V](bold green)'
 zsh_indicator = 'zsh'
 bash_indicator = 'bsh'
 format = '<\[[$indicator]($style)\]'
-style = 'bright-white'
-disabled = false
+# style = 'bright-white'
+disabled = true
 
 [aws]
 format = '<\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
-[c]
-format = '<\[[$symbol($version(-$name))]($style)\]'
+# [c]
+# format = '<\[[$symbol($version(-$name))]($style)\]'
 
 [cmake]
 format = '<\[[$symbol($version)]($style)\]'
@@ -89,8 +89,8 @@ format = '([\[$all_status$ahead_behind\]]($style))'
 [golang]
 format = '<\[[$symbol($version)]($style)\]'
 
-[haskell]
-format = '<\[[$symbol($version)]($style)\]'
+# [haskell]
+# format = '<\[[$symbol($version)]($style)\]'
 
 [helm]
 format = '<\[[$symbol($version)]($style)\]'
@@ -161,8 +161,8 @@ format = '<\[[$symbol($version)]($style)\]'
 [scala]
 format = '<\[[$symbol($version)]($style)\]'
 
-[spack]
-format = '<\[[$symbol$environment]($style)\]'
+# [spack]
+# format = '<\[[$symbol$environment]($style)\]'
 
 [sudo]
 format = '<\[[as $symbol]\]'
@@ -184,4 +184,3 @@ format = '<\[[$symbol($version)]($style)\]'
 
 [zig]
 format = '<\[[$symbol($version)]($style)\]'
-
